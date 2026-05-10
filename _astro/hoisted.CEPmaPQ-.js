@@ -1,0 +1,1 @@
+const e=document.getElementById("nav-toggle"),n=document.getElementById("mobile-nav");e?.addEventListener("click",()=>{const t=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",String(!t)),n?.toggleAttribute("hidden"),e.setAttribute("aria-label",t?"Menü öffnen":"Menü schließen")});
