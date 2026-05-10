@@ -1,0 +1,524 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Kanzlei Rogalla – Rechtsanwältin für Insolvenzrecht & Erbrecht in Alsfeld, Gießen, Offenbach"
+  description="Rechtsanwaltskanzlei Christina Rogalla – Spezialistin für Privatinsolvenz, Restschuldbefreiung, Erbrecht und Forderungsmanagement. Kostenlose Erstberatung. Standorte in Alsfeld, Gießen und Offenbach."
+>
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Kanzlei Rogalla – Willkommen">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__content animate-fade-in-up">
+        <span class="badge badge--white">Kostenlose Erstberatung</span>
+        <h1 class="hero__headline">
+          Ihr Neuanfang beginnt<br />
+          <em class="hero__accent">mit dem richtigen Anwalt.</em>
+        </h1>
+        <p class="hero__lead">
+          Rechtsanwältin Christina Rogalla begleitet Sie durch Insolvenz, Erbrecht und
+          Forderungsmanagement – persönlich, direkt und lösungsorientiert.
+          Drei Standorte in Mittelhessen.
+        </p>
+        <div class="hero__ctas">
+          <a href="/kontakt" class="btn btn-secondary btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Kostenlose Erstberatung
+          </a>
+          <a href="tel:+4966317580179" class="btn btn-ghost btn--lg">
+            +49 6631 / 758 017 9
+          </a>
+        </div>
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>DAV-Mitglied</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>20+ Jahre Erfahrung</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>3 Standorte in Hessen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#F9FAFB"/></svg>
+    </div>
+  </section>
+
+  <!-- USP BAND -->
+  <section class="usp-band bg-light" aria-label="Unsere Stärken">
+    <div class="container">
+      <div class="usp-grid">
+        <div class="usp-item animate-fade-in-up">
+          <div class="usp-item__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h2 class="usp-item__title">Restschuldbefreiung in 3 Jahren</h2>
+          <p class="usp-item__text">Nach nur 3 Jahren Wohlverhaltensphase sind alle Schulden weg. Gesetzlich garantiert.</p>
+        </div>
+        <div class="usp-item animate-fade-in-up" style="animation-delay: 0.1s">
+          <div class="usp-item__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h2 class="usp-item__title">Persönliche Beratung</h2>
+          <p class="usp-item__text">Kein Callcenter, keine anonymen Gespräche. Sie sprechen direkt mit Rechtsanwältin Rogalla.</p>
+        </div>
+        <div class="usp-item animate-fade-in-up" style="animation-delay: 0.2s">
+          <div class="usp-item__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h2 class="usp-item__title">Erstberatung kostenlos</h2>
+          <p class="usp-item__text">Das erste Gespräch ist kostenlos und unverbindlich. Wir klären Ihre Optionen – ohne Risiko.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section class="section-padding" aria-labelledby="leistungen-ueberblick">
+    <div class="container">
+      <div class="section-intro animate-fade-in-up">
+        <span class="section-eyebrow">Unsere Leistungen</span>
+        <h2 id="leistungen-ueberblick">Recht. Klar. Persönlich.</h2>
+        <p class="section-lead">
+          Kanzlei Rogalla ist spezialisiert auf drei Rechtsgebiete, in denen Menschen oft
+          am dringendsten Unterstützung brauchen.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <a href="/services/insolvenz" class="service-card animate-fade-in-up">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="service-card__badge">Insolvenzrecht</span>
+          <h3 class="service-card__title">Privatinsolvenz & Restschuldbefreiung</h3>
+          <p class="service-card__text">
+            Schuldenfreiheit nach 3 Jahren. Wir begleiten Sie von der ersten Beratung bis zur
+            gerichtlichen Restschuldbefreiung.
+          </p>
+          <span class="service-card__cta">Mehr erfahren →</span>
+        </a>
+
+        <a href="/services/erbrecht" class="service-card animate-fade-in-up" style="animation-delay: 0.1s">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <span class="service-card__badge">Erbrecht</span>
+          <h3 class="service-card__title">Testament, Erbschaft & Nachlass</h3>
+          <p class="service-card__text">
+            Vorausschauende Nachlassplanung, Testamentserstellung und Begleitung bei Erbstreitigkeiten.
+          </p>
+          <span class="service-card__cta">Mehr erfahren →</span>
+        </a>
+
+        <a href="/services/forderung" class="service-card animate-fade-in-up" style="animation-delay: 0.2s">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <span class="service-card__badge">Forderungsmanagement</span>
+          <h3 class="service-card__title">Forderungen durchsetzen</h3>
+          <p class="service-card__text">
+            Effektives Mahnwesen, gerichtliches Mahnverfahren und Zwangsvollstreckung.
+            Ihre offenen Forderungen – wir holen sie.
+          </p>
+          <span class="service-card__cta">Mehr erfahren →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WARUM ROGALLA -->
+  <section class="section-padding bg-light" aria-labelledby="warum-rogalla">
+    <div class="container">
+      <div class="why-layout">
+        <div class="why-content animate-fade-in-left">
+          <span class="section-eyebrow">Warum Kanzlei Rogalla</span>
+          <h2 id="warum-rogalla">Eine Anwältin, die zuhört.</h2>
+          <p class="why-lead">
+            Über 20 Jahre Erfahrung in den Bereichen, in denen Menschen echte Hilfe brauchen.
+            Keine leeren Versprechungen – dafür klare Antworten.
+          </p>
+          <ul class="why-list">
+            <li class="why-list__item">
+              <div class="why-list__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Diplom-Juristin</strong> mit über 20 Jahren Berufserfahrung im Insolvenz- und Erbrecht
+              </div>
+            </li>
+            <li class="why-list__item">
+              <div class="why-list__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Mitglied im Deutschen Anwaltverein (DAV)</strong> – für höchste Berufsstandards
+              </div>
+            </li>
+            <li class="why-list__item">
+              <div class="why-list__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Drei Standorte</strong> in Alsfeld, Gießen und Offenbach – für ganz Hessen
+              </div>
+            </li>
+            <li class="why-list__item">
+              <div class="why-list__icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Transparente Kosten</strong> – wir klären Gebühren im ersten Gespräch
+              </div>
+            </li>
+          </ul>
+          <a href="/team" class="btn btn-outline">Mehr über Christina Rogalla</a>
+        </div>
+        <div class="why-visual animate-fade-in-right" aria-hidden="true">
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="why-card__name">Christina Rogalla</div>
+            <div class="why-card__title">Rechtsanwältin · Diplom-Juristin</div>
+            <div class="why-card__stats">
+              <div class="why-card__stat">
+                <span class="why-card__stat-value">20+</span>
+                <span class="why-card__stat-label">Jahre Erfahrung</span>
+              </div>
+              <div class="why-card__stat">
+                <span class="why-card__stat-value">3</span>
+                <span class="why-card__stat-label">Standorte</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section animate-fade-in-up" aria-label="Erstberatung anfragen">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-box__content">
+          <span class="section-eyebrow section-eyebrow--light">Jetzt handeln</span>
+          <h2 class="cta-box__title">Lassen Sie uns sprechen.</h2>
+          <p class="cta-box__text">
+            Die kostenlose Erstberatung ist Ihr erster Schritt. Schildern Sie uns Ihre Situation –
+            wir zeigen Ihnen ehrlich auf, was möglich ist.
+          </p>
+        </div>
+        <div class="cta-box__actions">
+          <a href="/kontakt" class="btn btn-secondary btn--lg">Erstberatung anfragen</a>
+          <a href="tel:+4966317580179" class="btn btn-outline-light btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            +49 6631 / 758 017 9
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+  padding-block: calc(var(--space-24)) calc(var(--space-24) + 60px);
+  overflow: hidden;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 90% 10%, rgb(204 171 113 / 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 5% 90%, rgb(156 132 102 / 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero__inner { position: relative; z-index: 1; }
+.hero__content { max-width: 700px; }
+.hero__content .badge { margin-bottom: var(--space-6); }
+
+.hero__headline {
+  font-size: clamp(var(--font-size-4xl), 6vw, 4rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--white);
+  line-height: 1.08;
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-6);
+}
+
+.hero__accent { color: var(--gold-light); font-style: normal; }
+
+.hero__lead {
+  font-size: var(--font-size-lg);
+  color: rgb(255 255 255 / 0.78);
+  line-height: var(--line-height-relaxed);
+  max-width: 55ch;
+  margin-bottom: var(--space-8);
+}
+
+.hero__ctas { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; margin-bottom: var(--space-10); }
+
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  align-items: center;
+  padding-top: var(--space-6);
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: rgb(255 255 255 / 0.6);
+}
+.hero__trust-item svg { color: var(--gold-light); }
+
+.hero__wave { position: absolute; bottom: 0; left: 0; right: 0; line-height: 0; }
+.hero__wave svg { width: 100%; height: 80px; }
+
+/* USP BAND */
+.usp-band { padding-block: var(--space-16); }
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .usp-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-12); }
+}
+
+.usp-item { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.usp-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px; height: 52px;
+  border-radius: var(--radius-xl);
+  background-color: var(--gold-xpale);
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.usp-item__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--navy);
+  margin: 0;
+}
+
+.usp-item__text {
+  font-size: var(--font-size-base);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+/* SERVICES GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  border-top: 3px solid var(--gold);
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.service-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px; height: 64px;
+  border-radius: var(--radius-xl);
+  background-color: var(--gold-xpale);
+  color: var(--gold);
+}
+
+.service-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--gold-xpale);
+  color: var(--gold-dark);
+  border: 1px solid var(--gold-pale);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.service-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--navy);
+  margin: 0;
+}
+
+.service-card__text {
+  font-size: var(--font-size-base);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  flex: 1;
+}
+
+.service-card__cta {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--gold);
+  margin-top: auto;
+}
+
+/* WHY LAYOUT */
+.why-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .why-layout { grid-template-columns: 1fr 1fr; }
+}
+
+.why-lead {
+  font-size: var(--font-size-lg);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-8);
+}
+
+.why-list { display: flex; flex-direction: column; gap: var(--space-5); margin-bottom: var(--space-8); }
+
+.why-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  font-size: var(--font-size-base);
+  color: var(--text);
+  line-height: var(--line-height-relaxed);
+}
+
+.why-list__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background-color: var(--gold-xpale);
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.why-visual { display: flex; justify-content: center; }
+
+.why-card {
+  background: linear-gradient(145deg, var(--navy-dark) 0%, var(--navy) 100%);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-10);
+  text-align: center;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: var(--shadow-xl);
+}
+
+.why-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background-color: rgb(204 171 113 / 0.15);
+  color: var(--gold-light);
+  margin-bottom: var(--space-6);
+}
+
+.why-card__name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-2);
+}
+
+.why-card__title {
+  font-size: var(--font-size-sm);
+  color: var(--gold-light);
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-8);
+}
+
+.why-card__stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.why-card__stat { display: flex; flex-direction: column; gap: var(--space-1); align-items: center; }
+
+.why-card__stat-value {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.why-card__stat-label {
+  font-size: var(--font-size-xs);
+  color: rgb(255 255 255 / 0.45);
+  letter-spacing: var(--letter-spacing-wide);
+}
+</style>

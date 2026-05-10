@@ -1,0 +1,28 @@
+# Kanzlei Rogalla Admin - Apache Sicherheitsregeln
+
+# Verzeichnis-Listing deaktivieren
+Options -Indexes
+
+# Direkte PHP-Fehler nicht ausgeben (Produktivumgebung)
+php_flag display_errors Off
+
+# HTTP Strict Transport Security (HSTS)
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "DENY"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+</IfModule>
+
+# config.php und auth.php niemals direkt ausliefern
+<FilesMatch "^(config|auth)\.php$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# IP-Einschraenkung (optional - Kommentarzeichen entfernen und IP anpassen)
+# <RequireAll>
+#     Require ip 1.2.3.4
+#     Require ip 5.6.7.0/24
+# </RequireAll>

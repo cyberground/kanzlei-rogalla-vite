@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Impressum | Kanzlei Rogalla" description="Impressum der Rechtsanwaltskanzlei Christina Rogalla">
+  <Header slot="header" />
+  <section class="section-padding">
+    <div class="container container--md">
+      <h1>Impressum</h1>
+      <div class="legal-content">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>Rechtsanwaltskanzlei Christina Rogalla<br />Grünberger Straße 14<br />36304 Alsfeld</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: +49 6631 / 758 017 9<br />E-Mail: info@kanzlei-rogalla.de</p>
+
+        <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+        <p>Berufsbezeichnung: Rechtsanwältin (verliehen in Deutschland)</p>
+        <p>Zuständige Kammer: Rechtsanwaltskammer Frankfurt am Main</p>
+        <p>Es gelten die berufsrechtlichen Regelungen: Bundesrechtsanwaltsordnung (BRAO), Berufsordnung für Rechtsanwälte (BORA), Rechtsanwaltsvergütungsgesetz (RVG).</p>
+
+        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <p>Christina Rogalla<br />Grünberger Straße 14<br />36304 Alsfeld</p>
+
+        <h2>Haftungsausschluss</h2>
+        <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr.</p>
+      </div>
+    </div>
+  </section>
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.legal-content { margin-top: var(--space-8); }
+.legal-content h2 {
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+.legal-content p {
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
+  max-width: none;
+}
+</style>

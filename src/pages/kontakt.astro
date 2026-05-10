@@ -1,0 +1,818 @@
+---
+// kontakt.astro — Contact Page
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Kontakt – Kostenlose Erstberatung | Kanzlei Rogalla"
+  description="Kontaktieren Sie Kanzlei Rogalla für eine kostenlose Erstberatung. Telefon, E-Mail oder persönlich in Alsfeld, Gießen und Offenbach. Mo–Fr 9–17 Uhr."
+>
+  <Header slot="header" />
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero" aria-label="Kontakt">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <div class="page-hero__content animate-fade-in-up">
+        <span class="badge badge--white">Kontakt</span>
+        <h1 class="page-hero__headline">
+          Sprechen Sie<br />
+          <em class="page-hero__accent">mit uns.</em>
+        </h1>
+        <p class="page-hero__sub">
+          Die erste Beratung ist kostenlos und unverbindlich. Schildern Sie uns Ihre Situation –
+          wir hören zu und zeigen Ihnen ehrlich auf, welche Möglichkeiten Sie haben.
+        </p>
+      </div>
+    </div>
+    <div class="page-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f9fafb"/></svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT INFO CARDS
+       ============================================================ -->
+  <section class="section-padding--sm" aria-labelledby="kontakt-infos">
+    <div class="container">
+      <h2 class="sr-only" id="kontakt-infos">Kontaktinformationen</h2>
+      <div class="contact-cards animate-fade-in-up">
+        <a href="tel:+4966317580179" class="contact-card contact-card--phone">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div class="contact-card__body">
+            <span class="contact-card__label">Telefon</span>
+            <span class="contact-card__value">+49 6631 / 758 017 9</span>
+            <span class="contact-card__note">Mo–Fr 9:00–17:00 Uhr</span>
+          </div>
+          <svg class="contact-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a href="mailto:info@kanzlei-rogalla.de" class="contact-card contact-card--email">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-card__body">
+            <span class="contact-card__label">E-Mail</span>
+            <span class="contact-card__value">info@kanzlei-rogalla.de</span>
+            <span class="contact-card__note">Antwort in 24–48 Stunden</span>
+          </div>
+          <svg class="contact-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <div class="contact-card contact-card--address">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="contact-card__body">
+            <span class="contact-card__label">Hauptstandort Alsfeld</span>
+            <span class="contact-card__value">Markt 9, 36304 Alsfeld</span>
+            <span class="contact-card__note">+ 2 weitere Standorte in Hessen</span>
+          </div>
+          <svg class="contact-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FORM + HOURS
+       ============================================================ -->
+  <section class="section-padding" aria-labelledby="kontaktformular">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap animate-fade-in-left">
+          <div class="form-header">
+            <span class="section-eyebrow">Nachricht senden</span>
+            <h2 id="kontaktformular">Erstberatung anfragen</h2>
+            <p class="form-header__sub">
+              Füllen Sie das Formular aus und wir melden uns schnellstmöglich bei Ihnen.
+              Alle Angaben werden streng vertraulich behandelt.
+            </p>
+          </div>
+
+          <form
+            class="contact-form"
+            action=""
+            method="POST"
+            aria-label="Kontaktformular Erstberatung"
+            novalidate
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name" class="label label--required">Name</label>
+                <input
+                  type="text"
+                  id="cf-name"
+                  name="name"
+                  placeholder="Max Mustermann"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                />
+              </div>
+            </div>
+
+            <div class="form-row form-row--2col">
+              <div class="form-group">
+                <label for="cf-email" class="label label--required">E-Mail-Adresse</label>
+                <input
+                  type="email"
+                  id="cf-email"
+                  name="email"
+                  placeholder="max@beispiel.de"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cf-tel" class="label">Telefon (optional)</label>
+                <input
+                  type="tel"
+                  id="cf-tel"
+                  name="telefon"
+                  placeholder="+49 6631 / ..."
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-betreff" class="label label--required">Thema</label>
+                <div class="select-wrap">
+                  <select id="cf-betreff" name="betreff" required aria-required="true">
+                    <option value="" disabled selected>Bitte wählen …</option>
+                    <option value="insolvenz">Insolvenzrecht / Privatinsolvenz</option>
+                    <option value="forderung">Forderungsmanagement</option>
+                    <option value="erbrecht">Erbrecht</option>
+                    <option value="vorsorge">Vorsorge & Nachlass</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                  <svg class="select-wrap__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-message" class="label label--required">Ihre Nachricht</label>
+                <textarea
+                  id="cf-message"
+                  name="nachricht"
+                  rows="6"
+                  placeholder="Beschreiben Sie kurz Ihr Anliegen – je mehr Details, desto besser können wir Ihnen helfen …"
+                  required
+                  aria-required="true"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group form-group--checkbox">
+                <input
+                  type="checkbox"
+                  id="cf-datenschutz"
+                  name="datenschutz"
+                  required
+                  aria-required="true"
+                  class="checkbox"
+                />
+                <label for="cf-datenschutz" class="checkbox-label">
+                  Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und bin
+                  mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden.
+                  <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <button type="submit" class="btn btn-secondary btn--lg form-submit">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+                Anfrage senden
+              </button>
+            </div>
+
+            <p class="form-disclaimer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Ihre Daten werden verschlüsselt übertragen und ausschließlich zur Bearbeitung Ihrer Anfrage genutzt.
+            </p>
+          </form>
+        </div>
+
+        <!-- Opening Hours + Map -->
+        <aside class="contact-aside animate-fade-in-right">
+
+          <!-- Opening Hours -->
+          <div class="opening-hours">
+            <h3 class="aside-heading">Öffnungszeiten</h3>
+            <ul class="hours-list" role="list">
+              <li class="hours-item">
+                <span class="hours-day">Montag</span>
+                <span class="hours-time">09:00 – 17:00 Uhr</span>
+              </li>
+              <li class="hours-item">
+                <span class="hours-day">Dienstag</span>
+                <span class="hours-time">09:00 – 17:00 Uhr</span>
+              </li>
+              <li class="hours-item">
+                <span class="hours-day">Mittwoch</span>
+                <span class="hours-time">09:00 – 17:00 Uhr</span>
+              </li>
+              <li class="hours-item">
+                <span class="hours-day">Donnerstag</span>
+                <span class="hours-time">09:00 – 17:00 Uhr</span>
+              </li>
+              <li class="hours-item">
+                <span class="hours-day">Freitag</span>
+                <span class="hours-time">09:00 – 17:00 Uhr</span>
+              </li>
+              <li class="hours-item hours-item--closed">
+                <span class="hours-day">Samstag</span>
+                <span class="hours-time">Geschlossen</span>
+              </li>
+              <li class="hours-item hours-item--closed">
+                <span class="hours-day">Sonntag</span>
+                <span class="hours-time">Geschlossen</span>
+              </li>
+            </ul>
+            <div class="hours-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Außerhalb der Öffnungszeiten stehen wir per E-Mail zur Verfügung.
+            </div>
+          </div>
+
+          <!-- Standorte -->
+          <div class="aside-locations">
+            <h3 class="aside-heading">Unsere Standorte</h3>
+            <div class="location-list">
+              <div class="location-item">
+                <div class="location-item__dot" aria-hidden="true"></div>
+                <div>
+                  <strong>Alsfeld</strong> (Hauptsitz)
+                  <p class="location-item__address">Markt 9, 36304 Alsfeld</p>
+                </div>
+              </div>
+              <div class="location-item">
+                <div class="location-item__dot" aria-hidden="true"></div>
+                <div>
+                  <strong>Gießen</strong>
+                  <p class="location-item__address">Ursulum 14, Gießen</p>
+                </div>
+              </div>
+              <div class="location-item">
+                <div class="location-item__dot" aria-hidden="true"></div>
+                <div>
+                  <strong>Offenbach</strong>
+                  <p class="location-item__address">Berliner Str. 256, Offenbach</p>
+                </div>
+              </div>
+            </div>
+            <a href="/standorte" class="aside-all-locations">
+              Alle Standorte anzeigen
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="map-placeholder" role="img" aria-label="Kartenausschnitt Kanzlei Rogalla, Markt 9, Alsfeld">
+            <div class="map-placeholder__inner">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span class="map-placeholder__text">Karte wird geladen</span>
+              <span class="map-placeholder__sub">Markt 9, 36304 Alsfeld</span>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+.page-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-mid) 100%);
+  padding-block: var(--space-20) calc(var(--space-20) + 40px);
+  overflow: hidden;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 80% 20%, rgb(156 132 102 / 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 80%, rgb(204 171 113 / 0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.page-hero__inner { position: relative; z-index: 1; }
+.page-hero__content { max-width: 680px; }
+.page-hero__content .badge { margin-bottom: var(--space-5); }
+
+.page-hero__headline {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+  font-weight: var(--font-weight-extrabold);
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-6);
+}
+
+.page-hero__accent { color: var(--gold-light); font-style: normal; }
+
+.page-hero__sub {
+  font-size: var(--font-size-lg);
+  color: rgb(255 255 255 / 0.78);
+  line-height: var(--line-height-relaxed);
+  max-width: 60ch;
+}
+
+.page-hero__wave {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  line-height: 0;
+}
+
+.page-hero__wave svg { width: 100%; height: 60px; }
+
+/* ============================================================
+   CONTACT CARDS
+   ============================================================ */
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .contact-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-fast);
+  cursor: default;
+}
+
+a.contact-card {
+  cursor: pointer;
+}
+
+a.contact-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--gold-pale);
+}
+
+.contact-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background-color: var(--gold-xpale);
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.contact-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-card__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-card__value {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--navy);
+  line-height: var(--line-height-snug);
+}
+
+.contact-card__note {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.contact-card__arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+a.contact-card:hover .contact-card__arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--gold);
+}
+
+/* ============================================================
+   SECTION EYEBROW
+   ============================================================ */
+.section-eyebrow {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-3);
+}
+
+/* ============================================================
+   CONTACT LAYOUT
+   ============================================================ */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr 380px;
+  }
+}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.form-header {
+  margin-bottom: var(--space-8);
+}
+
+.form-header h2 {
+  margin-bottom: var(--space-3);
+}
+
+.form-header__sub {
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  max-width: 55ch;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row--2col {
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .form-row--2col {
+    flex-direction: row;
+    gap: var(--space-5);
+  }
+
+  .form-row--2col .form-group {
+    flex: 1;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.label--required::after {
+  content: ' *';
+  color: var(--gold);
+}
+
+/* Select wrapper */
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap select {
+  padding-right: var(--space-10);
+}
+
+.select-wrap__chevron {
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Checkbox */
+.form-group--checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  cursor: pointer;
+  letter-spacing: normal;
+  font-weight: var(--font-weight-normal);
+}
+
+.checkbox-label a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.checkbox-label a:hover { color: var(--gold-light); }
+
+.required-mark { color: var(--gold); }
+
+.form-submit { width: 100%; }
+
+@media (min-width: 640px) {
+  .form-submit { width: auto; }
+}
+
+.form-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  line-height: var(--line-height-relaxed);
+  max-width: none;
+}
+
+.form-disclaimer svg {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   ASIDE
+   ============================================================ */
+.contact-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.aside-heading {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--navy);
+  letter-spacing: var(--letter-spacing-snug);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--gold-pale);
+}
+
+/* Opening Hours */
+.opening-hours {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.hours-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--border-light);
+  font-size: var(--font-size-sm);
+}
+
+.hours-item:last-child { border-bottom: none; }
+
+.hours-day {
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+}
+
+.hours-time {
+  font-weight: var(--font-weight-semibold);
+  color: var(--navy);
+}
+
+.hours-item--closed .hours-time {
+  color: var(--text-muted);
+  font-weight: var(--font-weight-normal);
+}
+
+.hours-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+.hours-note svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+/* Locations */
+.aside-locations {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.location-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.location-item__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.35em;
+}
+
+.location-item strong {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--navy);
+}
+
+.location-item__address {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin: 0;
+  max-width: none;
+}
+
+.aside-all-locations {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--gold);
+  letter-spacing: var(--letter-spacing-wide);
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+
+.aside-all-locations:hover {
+  color: var(--gold-light);
+  gap: var(--space-2);
+}
+
+/* Map Placeholder */
+.map-placeholder {
+  background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgb(156 132 102 / 0.06) 0%, transparent 70%);
+}
+
+.map-placeholder__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.map-placeholder__inner svg { color: var(--gold); opacity: 0.6; }
+
+.map-placeholder__text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+}
+
+.map-placeholder__sub {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* SR-only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+</style>

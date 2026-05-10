@@ -1,0 +1,493 @@
+---
+// Blog Index — Kanzlei Rogalla
+// ============================================================
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = ['Alle', 'Insolvenzrecht', 'Erbrecht', 'Forderungsmanagement', 'Allgemein'] as const;
+
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  Insolvenzrecht:       { bg: 'var(--navy)',      text: 'var(--white)' },
+  Erbrecht:             { bg: 'var(--gold)',       text: 'var(--white)' },
+  Forderungsmanagement: { bg: 'var(--navy-mid)',   text: 'var(--white)' },
+  Allgemein:            { bg: 'var(--neutral-400)', text: 'var(--white)' },
+};
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
+}
+
+function excerpt(body: string, maxLen = 160): string {
+  // Strip markdown headings, bold, links
+  const clean = body
+    .replace(/^#{1,6}\s+.+$/gm, '')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\n+/g, ' ')
+    .trim();
+  return clean.length > maxLen ? clean.slice(0, maxLen).replace(/\s+\S*$/, '') + '…' : clean;
+}
+---
+
+<Layout
+  title="Rechtsnews & Ratgeber | Kanzlei Rogalla – Insolvenz & Erbrecht"
+  description="Aktuelle Rechtstipps zu Insolvenzrecht, Erbrecht und Forderungsmanagement von Rechtsanwältin Christina Rogalla aus Alsfeld, Gießen und Offenbach."
+>
+  <Header slot="header" />
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="blog-hero" aria-label="Blog-Übersicht">
+    <div class="blog-hero__bg" aria-hidden="true">
+      <div class="blog-hero__diagonal" aria-hidden="true"></div>
+    </div>
+    <div class="container blog-hero__inner">
+      <div class="blog-hero__eyebrow">
+        <span class="blog-hero__eyebrow-line" aria-hidden="true"></span>
+        <span>Wissen &amp; Recht</span>
+      </div>
+      <h1 class="blog-hero__title">Rechtsnews &amp; Ratgeber</h1>
+      <p class="blog-hero__sub">
+        Fundierte Informationen zu Insolvenzrecht, Erbrecht und Forderungsmanagement –
+        verständlich erklärt von Rechtsanwältin Christina Rogalla.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATEGORY FILTER + GRID
+       ============================================================ -->
+  <section class="blog-main">
+    <div class="container">
+
+      <!-- Category Filter Tabs -->
+      <div class="blog-filter" role="tablist" aria-label="Kategorien filtern">
+        {categories.map((cat) => (
+          <button
+            class="blog-filter__btn"
+            role="tab"
+            data-category={cat}
+            aria-selected={cat === 'Alle' ? 'true' : 'false'}
+          >
+            {cat}
+            {cat !== 'Alle' && (
+              <span class="blog-filter__count">
+                {posts.filter(p => p.data.category === cat).length}
+              </span>
+            )}
+            {cat === 'Alle' && (
+              <span class="blog-filter__count">{posts.length}</span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      <!-- Article Grid -->
+      <div class="blog-grid" id="blog-grid">
+        {posts.map((post) => {
+          const color = categoryColors[post.data.category] ?? categoryColors['Allgemein'];
+          return (
+            <article
+              class="blog-card"
+              data-category={post.data.category}
+              aria-label={post.data.title}
+            >
+              <div class="blog-card__top">
+                <span
+                  class="blog-card__badge"
+                  style={`background:${color.bg};color:${color.text}`}
+                >
+                  {post.data.category}
+                </span>
+                <time
+                  class="blog-card__date"
+                  datetime={post.data.pubDate.toISOString().slice(0, 10)}
+                >
+                  {formatDate(post.data.pubDate)}
+                </time>
+              </div>
+              <h2 class="blog-card__title">
+                <a href={`/blog/${post.slug}`} class="blog-card__title-link">
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="blog-card__excerpt">{post.data.description}</p>
+              <div class="blog-card__footer">
+                <div class="blog-card__tags">
+                  {post.data.tags.slice(0, 3).map((tag) => (
+                    <span class="blog-card__tag">#{tag}</span>
+                  ))}
+                </div>
+                <a href={`/blog/${post.slug}`} class="blog-card__cta" aria-label={`Artikel lesen: ${post.data.title}`}>
+                  Lesen
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <!-- No-results message (hidden by default) -->
+      <p class="blog-no-results" id="blog-no-results" aria-live="polite" hidden>
+        Keine Artikel in dieser Kategorie gefunden.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA SECTION
+       ============================================================ -->
+  <section class="blog-cta-section">
+    <div class="container blog-cta-section__inner">
+      <div class="blog-cta-section__content">
+        <h2 class="blog-cta-section__title">Ihre persönliche Rechtsfrage?</h2>
+        <p class="blog-cta-section__text">
+          Diese Artikel geben allgemeine Orientierung. Für Ihre konkrete Situation empfehlen
+          wir eine persönliche Beratung. Rechtsanwältin Christina Rogalla ist an drei
+          Standorten für Sie da.
+        </p>
+      </div>
+      <a href="/kontakt" class="btn btn-secondary btn--lg">
+        Kostenlose Erstberatung anfragen
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<!-- ============================================================
+     CATEGORY FILTER SCRIPT
+     ============================================================ -->
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.blog-filter__btn');
+  const cards   = document.querySelectorAll<HTMLElement>('.blog-card');
+  const noRes   = document.getElementById('blog-no-results');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.category ?? 'Alle';
+
+      // Update tab state
+      buttons.forEach((b) => b.setAttribute('aria-selected', 'false'));
+      btn.setAttribute('aria-selected', 'true');
+
+      // Filter cards
+      let visible = 0;
+      cards.forEach((card) => {
+        const match = cat === 'Alle' || card.dataset.category === cat;
+        card.hidden = !match;
+        if (match) visible++;
+      });
+
+      if (noRes) noRes.hidden = visible > 0;
+    });
+  });
+</script>
+
+<style>
+/* ============================================================
+   BLOG HERO
+   ============================================================ */
+.blog-hero {
+  position: relative;
+  background: var(--navy);
+  color: var(--white);
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+}
+
+.blog-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blog-hero__diagonal {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(156,132,102,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 100% at 80% 50%, rgba(10,90,122,.35) 0%, transparent 70%);
+}
+
+.blog-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.blog-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1.25rem;
+}
+
+.blog-hero__eyebrow-line {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--gold-light);
+  border-radius: 2px;
+}
+
+.blog-hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.blog-hero__sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.8);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   BLOG MAIN
+   ============================================================ */
+.blog-main {
+  padding: 3rem 0 5rem;
+  background: var(--bg-light, #f8f7f5);
+}
+
+/* ============================================================
+   FILTER TABS
+   ============================================================ */
+.blog-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 2.5rem;
+}
+
+.blog-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem 1.1rem;
+  border-radius: 2rem;
+  font-size: .875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  transition: background .2s, color .2s;
+}
+
+.blog-filter__btn[aria-selected="true"],
+.blog-filter__btn:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.blog-filter__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding: 0 .3rem;
+  border-radius: 1rem;
+  font-size: .75rem;
+  font-weight: 700;
+  background: rgba(255,255,255,.2);
+  color: inherit;
+}
+
+.blog-filter__btn:not([aria-selected="true"]) .blog-filter__count {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ============================================================
+   BLOG GRID
+   ============================================================ */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   BLOG CARD
+   ============================================================ */
+.blog-card {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  box-shadow: 0 2px 8px rgba(2,58,81,.06);
+  border: 1px solid rgba(2,58,81,.07);
+  transition: box-shadow .25s, transform .25s;
+}
+
+.blog-card:hover {
+  box-shadow: 0 8px 28px rgba(2,58,81,.13);
+  transform: translateY(-3px);
+}
+
+.blog-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.blog-card__badge {
+  display: inline-block;
+  padding: .2rem .7rem;
+  border-radius: .3rem;
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.blog-card__date {
+  font-size: .8rem;
+  color: var(--neutral-500, #6b7280);
+  white-space: nowrap;
+}
+
+.blog-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.blog-card__title-link {
+  color: var(--navy);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.blog-card__title-link:hover {
+  color: var(--gold);
+}
+
+.blog-card__excerpt {
+  font-size: .9rem;
+  color: var(--neutral-600, #4b5563);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.blog-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-top: auto;
+  padding-top: .75rem;
+  border-top: 1px solid rgba(2,58,81,.07);
+}
+
+.blog-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+}
+
+.blog-card__tag {
+  font-size: .72rem;
+  color: var(--navy-mid);
+  background: var(--gold-xpale, #f5efe4);
+  padding: .15rem .5rem;
+  border-radius: .25rem;
+  font-weight: 500;
+}
+
+.blog-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.blog-card__cta:hover {
+  color: var(--gold);
+}
+
+.blog-no-results {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--neutral-500, #6b7280);
+  font-size: 1rem;
+}
+
+/* ============================================================
+   BLOG CTA SECTION
+   ============================================================ */
+.blog-cta-section {
+  background: var(--navy);
+  color: var(--white);
+  padding: 4rem 0;
+}
+
+.blog-cta-section__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.blog-cta-section__title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-bottom: .5rem;
+}
+
+.blog-cta-section__text {
+  font-size: .95rem;
+  color: rgba(255,255,255,.8);
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-cta-section__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>

@@ -1,0 +1,261 @@
+---
+const navItems = [
+  { href: '/', label: 'Startseite' },
+  { href: '/services', label: 'Leistungen' },
+  { href: '/team', label: 'Über uns' },
+  { href: '/blog', label: 'Ratgeber' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header" role="banner">
+  <div class="header-top">
+    <div class="container header-top__inner">
+      <div class="header-top__info">
+        <a href="tel:+4966317580179" class="header-top__link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          +49 6631 / 758 017 9
+        </a>
+        <span class="header-top__sep" aria-hidden="true">|</span>
+        <a href="mailto:info@kanzlei-rogalla.de" class="header-top__link">info@kanzlei-rogalla.de</a>
+        <span class="header-top__sep header-top__sep--md" aria-hidden="true">|</span>
+        <span class="header-top__locations">Alsfeld · Gießen · Offenbach</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="container header-main__inner">
+      <a href="/" class="site-logo" aria-label="Kanzlei Rogalla – Zur Startseite">
+        <span class="site-logo__text">
+          <span class="site-logo__name">Kanzlei Rogalla</span>
+          <span class="site-logo__tagline">Rechtsanwältin · Insolvenz & Erbrecht</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul class="main-nav__list" role="list">
+          {navItems.map(item => (
+            <li>
+              <a
+                href={item.href}
+                class={`main-nav__link ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'main-nav__link--active' : ''}`}
+                aria-current={currentPath === item.href ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <a href="/kontakt" class="header-cta btn btn-secondary">
+        Erstberatung
+      </a>
+
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav" id="nav-toggle">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
+    <ul class="mobile-nav__list" role="list">
+      {navItems.map(item => (
+        <li>
+          <a href={item.href} class={`mobile-nav__link ${currentPath === item.href ? 'mobile-nav__link--active' : ''}`}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="/kontakt" class="btn btn-secondary" style="margin-top: 1rem; width: 100%; justify-content: center;">Erstberatung anfragen</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+.header-top {
+  background-color: var(--navy-dark);
+  padding-block: var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.header-top__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-top__info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.header-top__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: rgb(255 255 255 / 0.65);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+.header-top__link:hover { color: var(--gold-light); }
+
+.header-top__sep {
+  color: rgb(255 255 255 / 0.2);
+  font-size: 0.7rem;
+}
+.header-top__sep--md { display: none; }
+@media (min-width: 640px) { .header-top__sep--md { display: inline; } }
+
+.header-top__locations {
+  color: rgb(255 255 255 / 0.45);
+  display: none;
+}
+@media (min-width: 640px) { .header-top__locations { display: inline; } }
+
+.header-main {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-main__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-block: var(--space-4);
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.site-logo__name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: 1;
+}
+
+.site-logo__tagline {
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.main-nav { display: none; }
+@media (min-width: 900px) { .main-nav { display: block; } }
+
+.main-nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.main-nav__link {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  white-space: nowrap;
+}
+.main-nav__link:hover { color: var(--navy); background-color: var(--bg-alt); }
+.main-nav__link--active { color: var(--navy); font-weight: var(--font-weight-bold); }
+.main-nav__link--active::after {
+  content: ''; display: block; height: 2px;
+  background-color: var(--gold); border-radius: 1px; margin-top: 2px;
+}
+
+.header-cta { display: none; }
+@media (min-width: 900px) { .header-cta { display: inline-flex; } }
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-2);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+@media (min-width: 900px) { .nav-toggle { display: none; } }
+
+.nav-toggle__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--navy);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-fast);
+}
+
+.mobile-nav {
+  background-color: var(--white);
+  border-top: 1px solid var(--border-light);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+.mobile-nav__link:hover { background-color: var(--bg-alt); color: var(--navy); }
+.mobile-nav__link--active { color: var(--navy); background-color: var(--gold-xpale); }
+</style>
+
+<script>
+const toggle = document.getElementById('nav-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+
+toggle?.addEventListener('click', () => {
+  const expanded = toggle.getAttribute('aria-expanded') === 'true';
+  toggle.setAttribute('aria-expanded', String(!expanded));
+  mobileNav?.toggleAttribute('hidden');
+  toggle.setAttribute('aria-label', expanded ? 'Menü öffnen' : 'Menü schließen');
+});
+</script>

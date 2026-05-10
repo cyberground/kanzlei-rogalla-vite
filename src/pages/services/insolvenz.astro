@@ -1,0 +1,889 @@
+---
+// insolvenz.astro — Insolvenzrecht Service Page
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout
+  title="Insolvenzrecht – Privatinsolvenz & Regelinsolvenz | Kanzlei Rogalla"
+  description="Kanzlei Rogalla berät bei Privatinsolvenz, Regelinsolvenz und Restschuldbefreiung. 3 Jahre zum Neustart. Kostenlose Erstberatung in Alsfeld, Gießen, Offenbach."
+>
+  <Header slot="header" />
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero" aria-label="Einleitung Insolvenzrecht">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <div class="page-hero__content animate-fade-in-up">
+        <nav class="breadcrumb" aria-label="Brotkrumennavigation">
+          <div class="breadcrumb__item">
+            <a href="/">Home</a>
+            <svg class="breadcrumb__separator" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <div class="breadcrumb__item">
+            <a href="/services">Leistungen</a>
+            <svg class="breadcrumb__separator" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <div class="breadcrumb__item" aria-current="page">Insolvenzrecht</div>
+        </nav>
+
+        <span class="badge badge--white">Insolvenzrecht</span>
+        <h1 class="page-hero__headline">
+          Insolvenz ist kein Ende –<br />
+          <em class="page-hero__accent">sondern ein Neustart.</em>
+        </h1>
+        <p class="page-hero__sub">
+          Erdrückende Schulden müssen kein Dauerzustand sein. Mit dem richtigen Verfahren erhalten Sie
+          nach nur 3 Jahren eine vollständige Restschuldbefreiung – und beginnen finanziell neu.
+          Rechtsanwältin Christina Rogalla begleitet Sie persönlich durch jeden Schritt.
+        </p>
+        <div class="page-hero__ctas">
+          <a href="/kontakt" class="btn btn-secondary btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Kostenlose Erstberatung
+          </a>
+          <a href="tel:+4966317580179" class="btn btn-ghost btn--lg">
+            +49 6631 / 758 017 9
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="page-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f9fafb"/></svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHAT IS INSOLVENZ
+       ============================================================ -->
+  <section class="section-padding" aria-labelledby="was-ist-insolvenz">
+    <div class="container">
+      <div class="section-intro animate-fade-in-up">
+        <span class="section-eyebrow">Grundlagen</span>
+        <h2 id="was-ist-insolvenz">Privatinsolvenz oder Regelinsolvenz?</h2>
+        <p class="section-lead">
+          Das Insolvenzrecht unterscheidet zwischen zwei zentralen Verfahren – je nach Ihrer persönlichen
+          Situation ist das eine oder das andere der richtige Weg.
+        </p>
+      </div>
+
+      <div class="insolv-compare animate-fade-in-up">
+        <div class="insolv-card">
+          <div class="insolv-card__badge">Privatpersonen</div>
+          <h3 class="insolv-card__title">Verbraucherinsolvenz (Privatinsolvenz)</h3>
+          <p class="insolv-card__text">
+            Das Verbraucherinsolvenzverfahren richtet sich an Privatpersonen sowie ehemalige Selbstständige
+            mit überschaubaren Verhältnissen. Vor dem gerichtlichen Verfahren ist ein außergerichtlicher
+            Einigungsversuch mit den Gläubigern zwingend vorgeschrieben – Kanzlei Rogalla übernimmt
+            diese komplexe Aufgabe für Sie.
+          </p>
+          <p class="insolv-card__text">
+            Scheitert die außergerichtliche Einigung, wird beim Amtsgericht das Insolvenzverfahren
+            eröffnet. Nach einer Wohlverhaltensphase von 3 Jahren werden Ihre verbliebenen Schulden
+            vollständig erlassen – die Restschuldbefreiung ist Ihr gesetzlicher Anspruch.
+          </p>
+          <ul class="insolv-card__list">
+            <li>Für Privatpersonen und ehemalige Selbstständige</li>
+            <li>Außergerichtlicher Schuldenbereinigungsplan als erster Schritt</li>
+            <li>3 Jahre Wohlverhaltensphase</li>
+            <li>Vollständige Restschuldbefreiung am Ende</li>
+          </ul>
+        </div>
+
+        <div class="insolv-card insolv-card--alt">
+          <div class="insolv-card__badge insolv-card__badge--navy">Unternehmen & Selbstständige</div>
+          <h3 class="insolv-card__title">Regelinsolvenz</h3>
+          <p class="insolv-card__text">
+            Das Regelinsolvenzverfahren gilt für Unternehmen, Selbstständige mit komplexeren Verbindlichkeiten
+            (z.B. gegenüber dem Finanzamt oder Sozialversicherungsträgern) sowie natürliche Personen,
+            die eine selbstständige Tätigkeit ausübten.
+          </p>
+          <p class="insolv-card__text">
+            Ziel ist entweder die geordnete Abwicklung oder – in manchen Fällen – die Sanierung des
+            Unternehmens. Auch im Regelinsolvenzverfahren können Privatpersonen nach der Wohlverhaltensphase
+            Restschuldbefreiung erlangen.
+          </p>
+          <ul class="insolv-card__list">
+            <li>Für Unternehmen und komplexere Schuldverhältnisse</li>
+            <li>Geordnete Abwicklung oder Sanierung</li>
+            <li>Insolvenzplan als Instrument zur Unternehmensrettung</li>
+            <li>Restschuldbefreiung auch für natürliche Personen möglich</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BENEFIT CARDS
+       ============================================================ -->
+  <section class="section-padding bg-light" aria-labelledby="vorteile-insolvenz">
+    <div class="container">
+      <div class="section-intro animate-fade-in-up">
+        <span class="section-eyebrow">Ihre Vorteile</span>
+        <h2 id="vorteile-insolvenz">Warum das Insolvenzverfahren für Sie funktioniert</h2>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card animate-fade-in-up">
+          <div class="benefit-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="benefit-card__title">3 Jahre Restschuldbefreiung</h3>
+          <p class="benefit-card__text">
+            Nach nur 3 Jahren Wohlverhaltensphase werden sämtliche verbliebenen Schulden gesetzlich
+            erlassen. Sie starten mit einer bereinigten Finanzsituation neu – ohne Altlasten.
+          </p>
+        </div>
+
+        <div class="benefit-card animate-fade-in-up">
+          <div class="benefit-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="benefit-card__title">Pfändungsschutz</h3>
+          <p class="benefit-card__text">
+            Ab Verfahrenseröffnung greift sofortiger Pfändungsschutz. Gläubiger dürfen nicht mehr
+            vollstrecken, Konten werden entsperrt, und Sie erhalten ein pfändungsfreies Existenzminimum.
+          </p>
+        </div>
+
+        <div class="benefit-card animate-fade-in-up">
+          <div class="benefit-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+          </div>
+          <h3 class="benefit-card__title">Schuldenbereinigungsplan</h3>
+          <p class="benefit-card__text">
+            Im außergerichtlichen Verfahren entwickeln wir einen realistischen Schuldenbereinigungsplan,
+            der Gläubigern eine Einigung ermöglicht und das teure Gerichtsverfahren vermeidet.
+          </p>
+        </div>
+
+        <div class="benefit-card animate-fade-in-up">
+          <div class="benefit-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="benefit-card__title">Neustart garantiert</h3>
+          <p class="benefit-card__text">
+            Das Insolvenzverfahren ist rechtlich garantierter Weg heraus aus der Schuldenfalle.
+            Nach dem Abschluss sind Sie wieder kreditwürdig und können ein schuldenfreies Leben führen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROCESS STEPS
+       ============================================================ -->
+  <section class="section-padding" aria-labelledby="ablauf-insolvenz">
+    <div class="container">
+      <div class="section-intro animate-fade-in-up">
+        <span class="section-eyebrow">Der Weg zum Neustart</span>
+        <h2 id="ablauf-insolvenz">In 5 Schritten zur Restschuldbefreiung</h2>
+        <p class="section-lead">
+          Wir begleiten Sie durch jeden Schritt des Verfahrens – von der ersten Beratung bis zur
+          endgültigen Restschuldbefreiung.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step animate-fade-in-left">
+          <div class="process-step__number" aria-hidden="true">01</div>
+          <div class="process-step__body">
+            <h3 class="process-step__title">Kostenlose Erstberatung</h3>
+            <p class="process-step__text">
+              In einem vertraulichen Gespräch analysieren wir Ihre Schuldensituation, prüfen welches
+              Verfahren für Sie geeignet ist und erläutern die nächsten Schritte. Ehrlich, klar, ohne Beschönigung.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step animate-fade-in-left">
+          <div class="process-step__number" aria-hidden="true">02</div>
+          <div class="process-step__body">
+            <h3 class="process-step__title">Unterlagen zusammenstellen</h3>
+            <p class="process-step__text">
+              Wir helfen Ihnen, alle erforderlichen Unterlagen zu sammeln: Einkommensnachweise, Gläubigerlisten,
+              Kontoauszüge und Verträge. Wir geben Ihnen eine genaue Checkliste an die Hand.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step animate-fade-in-left">
+          <div class="process-step__number" aria-hidden="true">03</div>
+          <div class="process-step__body">
+            <h3 class="process-step__title">Außergerichtlicher Einigungsversuch</h3>
+            <p class="process-step__text">
+              Wir erstellen einen individuellen Schuldenbereinigungsplan und nehmen Kontakt zu allen
+              Gläubigern auf. Gelingt eine Einigung, ist das gerichtliche Verfahren nicht nötig.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step animate-fade-in-left">
+          <div class="process-step__number" aria-hidden="true">04</div>
+          <div class="process-step__body">
+            <h3 class="process-step__title">Antrag beim Insolvenzgericht</h3>
+            <p class="process-step__text">
+              Scheitert die außergerichtliche Einigung, stellen wir den Insolvenzantrag beim zuständigen
+              Amtsgericht. Wir übernehmen die vollständige Vorbereitung und Einreichung aller Dokumente.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step animate-fade-in-left">
+          <div class="process-step__number" aria-hidden="true">05</div>
+          <div class="process-step__body">
+            <h3 class="process-step__title">Wohlverhaltensphase & Restschuldbefreiung</h3>
+            <p class="process-step__text">
+              Während der 3-jährigen Wohlverhaltensphase stehen wir Ihnen beratend zur Seite. Am Ende
+              steht die gerichtliche Restschuldbefreiung – Ihr gesetzlich garantierter Neuanfang.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section-padding bg-light" aria-labelledby="faq-insolvenz">
+    <div class="container container--md">
+      <div class="section-intro animate-fade-in-up">
+        <span class="section-eyebrow">Häufige Fragen</span>
+        <h2 id="faq-insolvenz">Ihre Fragen zur Insolvenz</h2>
+      </div>
+
+      <div class="faq-list animate-fade-in-up">
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Wie lange dauert das Insolvenzverfahren insgesamt?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-item__answer">
+            <p>
+              Das Insolvenzverfahren dauert in Deutschland in der Regel 3 Jahre ab Verfahrenseröffnung.
+              Hinzu kommt die Zeit für den außergerichtlichen Einigungsversuch (ca. 3–6 Monate) sowie
+              die Vorbereitung des Antrags. Insgesamt sollten Sie mit etwa 3,5 bis 4 Jahren rechnen,
+              bis die vollständige Restschuldbefreiung erteilt wird.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Welche Schulden werden bei der Restschuldbefreiung nicht erlassen?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-item__answer">
+            <p>
+              Bestimmte Forderungen sind von der Restschuldbefreiung ausgenommen, insbesondere:
+              Geldstrafen und Bußgelder, Unterhaltsschulden aus vorsätzlichen Verletzungen der Unterhaltspflicht,
+              sowie Schulden aus unerlaubten Handlungen, wenn der Gläubiger dies beantragt hat.
+              Steuer- und Sozialversicherungsschulden hingegen werden grundsätzlich mit erfasst.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Kann ich während der Insolvenz weiterarbeiten?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-item__answer">
+            <p>
+              Ja, Sie können und sollen während der Insolvenz weiterarbeiten. Ihr Arbeitseinkommen
+              wird nur insoweit gepfändet, als es den Pfändungsfreibetrag übersteigt. Der Pfändungsschutz
+              stellt sicher, dass Ihnen ein angemessenes Existenzminimum verbleibt, um Ihren Lebensunterhalt
+              und den Ihrer Familie zu bestreiten.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Verliere ich meine Wohnung in der Insolvenz?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-item__answer">
+            <p>
+              Als Mieter müssen Sie Ihre Wohnung in der Regel nicht aufgeben, solange Sie die laufende
+              Miete zahlen können. Als Eigentümer kann das Eigenheim in die Insolvenzmasse fallen.
+              In jedem Fall prüfen wir Ihre Situation individuell und zeigen Ihnen auf, welche Optionen
+              zum Schutz Ihrer Wohnsituation bestehen.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-item__question">
+            Was kostet mich die Unterstützung durch Kanzlei Rogalla?
+            <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-item__answer">
+            <p>
+              Die Erstberatung ist kostenlos und unverbindlich. Die anwaltlichen Gebühren für das
+              Insolvenzverfahren richten sich nach dem Rechtsanwaltsvergütungsgesetz (RVG). In vielen
+              Fällen besteht die Möglichkeit, Beratungshilfe oder Prozesskostenhilfe zu beantragen,
+              sodass die anwaltliche Unterstützung für Sie erschwinglich bleibt. Wir besprechen die
+              Kosten transparent in der Erstberatung.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA SECTION
+       ============================================================ -->
+  <section class="cta-section animate-fade-in-up" aria-label="Beratung anfragen">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-box__content">
+          <span class="section-eyebrow section-eyebrow--light">Jetzt handeln</span>
+          <h2 class="cta-box__title">Starten Sie Ihren Neuanfang</h2>
+          <p class="cta-box__text">
+            Zögern Sie nicht länger – jeder Tag mit Schulden kostet bares Geld. Rufen Sie uns an
+            oder schreiben Sie uns. Die erste Beratung ist kostenlos und unverbindlich.
+          </p>
+        </div>
+        <div class="cta-box__actions">
+          <a href="/kontakt" class="btn btn-secondary btn--lg">Kostenlose Erstberatung anfragen</a>
+          <a href="tel:+4966317580179" class="btn btn-outline-light btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            +49 6631 / 758 017 9
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+.page-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-mid) 100%);
+  padding-block: var(--space-20) calc(var(--space-20) + 40px);
+  overflow: hidden;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 80% 20%, rgb(156 132 102 / 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 80%, rgb(204 171 113 / 0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero__content {
+  max-width: 760px;
+}
+
+.page-hero__content .breadcrumb {
+  margin-bottom: var(--space-6);
+  color: rgb(255 255 255 / 0.55);
+}
+
+.page-hero__content .breadcrumb a {
+  color: rgb(255 255 255 / 0.55);
+  transition: color var(--transition-fast);
+}
+
+.page-hero__content .breadcrumb a:hover {
+  color: var(--gold-light);
+}
+
+.page-hero__content .breadcrumb__separator {
+  color: rgb(255 255 255 / 0.3);
+}
+
+.page-hero__content .badge {
+  margin-bottom: var(--space-5);
+}
+
+.page-hero__headline {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+  font-weight: var(--font-weight-extrabold);
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-6);
+}
+
+.page-hero__accent {
+  color: var(--gold-light);
+  font-style: normal;
+}
+
+.page-hero__sub {
+  font-size: var(--font-size-lg);
+  color: rgb(255 255 255 / 0.78);
+  line-height: var(--line-height-relaxed);
+  max-width: 60ch;
+  margin-bottom: var(--space-8);
+}
+
+.page-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.page-hero__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 0;
+}
+
+.page-hero__wave svg {
+  width: 100%;
+  height: 60px;
+}
+
+/* Ghost outline light button for dark backgrounds */
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--white);
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.btn-outline-light:hover {
+  background-color: rgb(255 255 255 / 0.12);
+  border-color: rgb(255 255 255 / 0.7);
+  color: var(--white);
+}
+
+/* ============================================================
+   SECTION INTRO
+   ============================================================ */
+.section-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-12);
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-3);
+}
+
+.section-eyebrow--light {
+  color: var(--gold-light);
+}
+
+.section-intro h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-lead {
+  font-size: var(--font-size-lg);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   INSOLVENZ COMPARE CARDS
+   ============================================================ */
+.insolv-compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .insolv-compare {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.insolv-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.insolv-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-3px);
+}
+
+.insolv-card--alt {
+  border-top: 3px solid var(--navy);
+}
+
+.insolv-card:not(.insolv-card--alt) {
+  border-top: 3px solid var(--gold);
+}
+
+.insolv-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--gold-xpale);
+  color: var(--gold);
+  border: 1px solid var(--gold-pale);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-4);
+}
+
+.insolv-card__badge--navy {
+  background-color: rgb(2 58 81 / 0.07);
+  color: var(--navy);
+  border-color: rgb(2 58 81 / 0.15);
+}
+
+.insolv-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--navy);
+  margin-bottom: var(--space-4);
+}
+
+.insolv-card__text {
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
+  max-width: none;
+}
+
+.insolv-card__list {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.insolv-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+.insolv-card__list li::before {
+  content: '';
+  display: inline-block;
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  margin-top: 0.55em;
+}
+
+/* ============================================================
+   BENEFITS GRID
+   ============================================================ */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.benefit-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.benefit-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.benefit-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background-color: var(--gold-xpale);
+  color: var(--gold);
+  margin-bottom: var(--space-5);
+}
+
+.benefit-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--navy);
+  margin-bottom: var(--space-3);
+}
+
+.benefit-card__text {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  max-width: none;
+}
+
+/* ============================================================
+   PROCESS STEPS
+   ============================================================ */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), var(--gold-pale));
+}
+
+@media (min-width: 640px) {
+  .process-steps::before {
+    left: 36px;
+  }
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding-bottom: var(--space-8);
+  position: relative;
+}
+
+.process-step:last-child {
+  padding-bottom: 0;
+}
+
+.process-step__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-wide);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-md);
+}
+
+.process-step__body {
+  padding-top: var(--space-3);
+  flex: 1;
+}
+
+.process-step__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--navy);
+  margin-bottom: var(--space-3);
+}
+
+.process-step__text {
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  max-width: 60ch;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+}
+
+.faq-item[open] {
+  box-shadow: var(--shadow-md);
+}
+
+.faq-item__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  transition: background-color var(--transition-fast);
+}
+
+.faq-item__question::-webkit-details-marker { display: none; }
+
+.faq-item__question:hover {
+  background-color: var(--bg-alt);
+}
+
+.faq-item[open] .faq-item__question {
+  background-color: var(--gold-xpale);
+  color: var(--navy);
+  border-bottom: 1px solid var(--gold-pale);
+}
+
+.faq-item__chevron {
+  flex-shrink: 0;
+  color: var(--gold);
+  transition: transform var(--transition-base);
+}
+
+.faq-item[open] .faq-item__chevron {
+  transform: rotate(180deg);
+}
+
+.faq-item__answer {
+  padding: var(--space-5) var(--space-6);
+}
+
+.faq-item__answer p {
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  max-width: none;
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+  padding-block: var(--space-16);
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-12) var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(204 171 113 / 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .cta-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.cta-box__content {
+  flex: 1;
+}
+
+.cta-box__title {
+  font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  margin-bottom: var(--space-4);
+}
+
+.cta-box__text {
+  color: rgb(255 255 255 / 0.72);
+  line-height: var(--line-height-relaxed);
+  max-width: 52ch;
+}
+
+.cta-box__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .cta-box__actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+</style>
