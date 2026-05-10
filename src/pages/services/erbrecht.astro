@@ -452,7 +452,7 @@ import Footer from '../../components/Footer.astro';
   background: var(--white);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-2xl);
-  padding: var(--space-7);
+  padding: 1.75rem;
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
@@ -494,6 +494,17 @@ import Footer from '../../components/Footer.astro';
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+}
+
+.tag {
+  display: inline-block;
+  padding: .2rem .65rem;
+  border-radius: .3rem;
+  font-size: .75rem;
+  font-weight: 600;
+  background: var(--gold-xpale, #f5efe4);
+  color: var(--navy-mid);
+  letter-spacing: .01em;
 }
 
 /* ============================================================
