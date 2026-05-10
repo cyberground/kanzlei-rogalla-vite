@@ -103,6 +103,9 @@ const services = [
             <a href="/blog" class={`main-nav__link ${currentPath.startsWith('/blog') ? 'main-nav__link--active' : ''}`}>Ratgeber</a>
           </li>
           <li>
+            <a href="/downloads" class={`main-nav__link ${currentPath.startsWith('/downloads') ? 'main-nav__link--active' : ''}`}>Downloads</a>
+          </li>
+          <li>
             <a href="/kontakt" class={`main-nav__link ${currentPath === '/kontakt' ? 'main-nav__link--active' : ''}`}>Kontakt</a>
           </li>
         </ul>
@@ -134,6 +137,7 @@ const services = [
       </li>
       <li><a href="/team" class="mobile-nav__link">Über uns</a></li>
       <li><a href="/blog" class="mobile-nav__link">Ratgeber</a></li>
+      <li><a href="/downloads" class="mobile-nav__link">Downloads</a></li>
       <li><a href="/kontakt" class="mobile-nav__link">Kontakt</a></li>
       <li><a href="/kontakt" class="btn btn-secondary" style="margin-top:1rem;width:100%;justify-content:center;">Erstberatung anfragen</a></li>
     </ul>
