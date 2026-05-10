@@ -140,75 +140,76 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- WARUM ROGALLA -->
-  <section class="section-padding bg-light" aria-labelledby="warum-rogalla">
+  <!-- WARUM ROGALLA — Split Layout: Text links, Bild rechts -->
+  <section class="section-padding" style="background: var(--white);" aria-labelledby="warum-rogalla">
     <div class="container">
-      <div class="why-layout">
-        <div class="why-content animate-fade-in-left">
-          <span class="section-eyebrow">Warum Kanzlei Rogalla</span>
-          <h2 id="warum-rogalla">Eine Anwältin, die zuhört.</h2>
-          <p class="why-lead">
-            Über 20 Jahre Erfahrung in den Bereichen, in denen Menschen echte Hilfe brauchen.
-            Keine leeren Versprechungen – dafür klare Antworten.
-          </p>
-          <ul class="why-list">
-            <li class="why-list__item">
-              <div class="why-list__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <strong>Diplom-Juristin</strong> mit über 20 Jahren Berufserfahrung im Insolvenz- und Erbrecht
-              </div>
-            </li>
-            <li class="why-list__item">
-              <div class="why-list__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <strong>Mitglied im Deutschen Anwaltverein (DAV)</strong> – für höchste Berufsstandards
-              </div>
-            </li>
-            <li class="why-list__item">
-              <div class="why-list__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <strong>Drei Standorte</strong> in Alsfeld, Gießen und Offenbach – für ganz Hessen
-              </div>
-            </li>
-            <li class="why-list__item">
-              <div class="why-list__icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <strong>Transparente Kosten</strong> – wir klären Gebühren im ersten Gespräch
-              </div>
-            </li>
+      <div class="split-layout">
+        <div class="split-layout__text animate-fade-in-left">
+          <span class="section-eyebrow">Ihre Anwältin</span>
+          <h2 id="warum-rogalla">Christina Rogalla –<br/>persönlich. direkt. lösungsorientiert.</h2>
+          <p class="split-layout__lead">Über 20 Jahre Erfahrung in Insolvenzrecht, Erbrecht und Forderungsmanagement. Keine anonymen Beratungen – Sie sprechen immer direkt mit der Anwältin.</p>
+          <ul class="check-list">
+            <li>Diplom-Juristin mit 20+ Jahren Erfahrung</li>
+            <li>DAV-Mitglied – höchste Berufsstandards</li>
+            <li>3 Standorte in Alsfeld, Gießen, Offenbach</li>
+            <li>Kostenlose Erstberatung</li>
           </ul>
           <a href="/team" class="btn btn-outline">Mehr über Christina Rogalla</a>
         </div>
-        <div class="why-visual animate-fade-in-right">
-          <div class="why-card">
-            <div class="why-card__photo">
-              <img src="/images/team-2.webp"
-                   alt="Rechtsanwältin Christina Rogalla"
-                   class="why-card__portrait"
-                   width="300" height="200"
-                   loading="lazy" />
-            </div>
-            <div class="why-card__name">Christina Rogalla</div>
-            <div class="why-card__title">Rechtsanwältin · Diplom-Juristin</div>
-            <div class="why-card__stats">
-              <div class="why-card__stat">
-                <span class="why-card__stat-value">20+</span>
-                <span class="why-card__stat-label">Jahre Erfahrung</span>
-              </div>
-              <div class="why-card__stat">
-                <span class="why-card__stat-value">3</span>
-                <span class="why-card__stat-label">Standorte</span>
-              </div>
-            </div>
+        <div class="split-layout__img animate-fade-in-right">
+          <img src="/images/christina-portrait.jpg"
+               alt="Rechtsanwältin Christina Rogalla"
+               class="split-img split-img--portrait"
+               loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BERATUNGSGESPRÄCH — Split Layout: Bild links, Text rechts -->
+  <section class="section-padding" style="background: #FBF7EF;" aria-label="Erstberatung">
+    <div class="container">
+      <div class="split-layout split-layout--reverse">
+        <div class="split-layout__img animate-fade-in-left">
+          <img src="/images/beratung.jpg"
+               alt="Beratungsgespräch Kanzlei Rogalla"
+               class="split-img split-img--square"
+               loading="lazy" />
+        </div>
+        <div class="split-layout__text animate-fade-in-right">
+          <span class="section-eyebrow">Ihr erstes Gespräch</span>
+          <h2>Kostenlose Erstberatung –<br/>ehrlich und unverbindlich.</h2>
+          <p class="split-layout__lead">In einem persönlichen Gespräch analysieren wir Ihre Situation, erklären Ihre Optionen und zeigen auf, was rechtlich möglich ist. Ohne Beschönigung – aber mit echten Lösungen.</p>
+          <div class="highlight-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>Jetzt anrufen: <strong>+49 6631 / 758 017 9</strong></span>
           </div>
+          <a href="/kontakt" class="btn btn-secondary btn--lg">Erstberatung anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KANZLEI — Split Layout: Text links, Bild rechts -->
+  <section class="section-padding" style="background: var(--bg-alt);" aria-label="Unsere Kanzlei">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-layout__text animate-fade-in-left">
+          <span class="section-eyebrow">Unsere Kanzlei</span>
+          <h2>Seit über 20 Jahren Ihr Partner in Rechtsfragen.</h2>
+          <p class="split-layout__lead">Die Kanzlei Rogalla in Alsfeld steht für persönliche Beratung auf höchstem rechtlichen Niveau. Wir sind für Sie da – in der Kanzlei, telefonisch oder auf Wunsch auch vor Ort.</p>
+          <div class="location-chips">
+            <span class="location-chip">📍 Alsfeld (Hauptkanzlei)</span>
+            <span class="location-chip">📍 Gießen</span>
+            <span class="location-chip">📍 Offenbach</span>
+          </div>
+          <a href="/kontakt" class="btn btn-outline">Standorte & Öffnungszeiten</a>
+        </div>
+        <div class="split-layout__img animate-fade-in-right">
+          <img src="/images/kanzlei-gebaeude.png"
+               alt="Kanzlei Rogalla Alsfeld"
+               class="split-img split-img--landscape"
+               loading="lazy" />
         </div>
       </div>
     </div>
@@ -423,7 +424,78 @@ import Footer from '../components/Footer.astro';
   margin-top: auto;
 }
 
-/* WHY LAYOUT */
+/* SPLIT LAYOUT */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .split-layout { grid-template-columns: 1fr 1fr; }
+  .split-layout--reverse .split-layout__img { order: -1; }
+}
+
+.split-layout__lead {
+  font-size: var(--font-size-lg);
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+/* Split Images */
+.split-img {
+  width: 100%;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  object-fit: cover;
+}
+.split-img--portrait { aspect-ratio: 3/4; max-height: 550px; }
+.split-img--square { aspect-ratio: 1; max-height: 480px; }
+.split-img--landscape { aspect-ratio: 4/3; }
+
+/* Checklist */
+.check-list {
+  list-style: none; padding: 0;
+  display: flex; flex-direction: column; gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+.check-list li {
+  display: flex; align-items: center; gap: var(--space-3);
+  font-size: var(--font-size-base); color: var(--text);
+  line-height: var(--line-height-relaxed);
+}
+.check-list li::before {
+  content: '✓';
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; flex-shrink: 0;
+  background: var(--gold-xpale); color: var(--gold-dark);
+  border-radius: 50%; font-size: 0.75rem; font-weight: 900;
+}
+
+/* Highlight Box */
+.highlight-box {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--white); border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-base); color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+.highlight-box svg { color: var(--gold); flex-shrink: 0; }
+
+/* Location Chips */
+.location-chips { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-8); }
+.location-chip {
+  padding: var(--space-2) var(--space-4);
+  background: var(--white); border: 1px solid var(--border-light);
+  border-radius: var(--radius-full); font-size: var(--font-size-sm);
+  color: var(--text-light); box-shadow: var(--shadow-xs);
+}
+
+/* WHY LAYOUT (legacy — kept for compatibility) */
 .why-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -493,7 +565,7 @@ import Footer from '../components/Footer.astro';
 }
 
 .why-card__name {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: var(--font-size-2xl);
   font-weight: 700;
   color: var(--white);
@@ -518,7 +590,7 @@ import Footer from '../components/Footer.astro';
 .why-card__stat { display: flex; flex-direction: column; gap: var(--space-1); align-items: center; }
 
 .why-card__stat-value {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: var(--font-size-4xl);
   font-weight: 700;
   color: var(--gold-light);
