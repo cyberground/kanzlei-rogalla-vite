@@ -42,14 +42,15 @@ function formatDate(date: Date): string {
   return date.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
 }
 
-const siteUrl = 'https://vite.kanzlei-rogalla.de';
-const articleUrl = `${siteUrl}/blog/${post.slug}`;
+const siteUrl = 'https://kanzlei-rogalla.de';
+const articleUrl = `${siteUrl}/blog/${post.slug}/`;
 ---
 
 <Layout
   title={`${post.data.title} | Kanzlei Rogalla`}
   description={post.data.description}
   canonical={articleUrl}
+  type="article"
 >
   <!-- JSON-LD Article Schema -->
   <script
@@ -60,23 +61,41 @@ const articleUrl = `${siteUrl}/blog/${post.slug}`;
       "@type": "Article",
       "headline": post.data.title,
       "description": post.data.description,
+      "url": articleUrl,
+      "datePublished": post.data.pubDate.toISOString(),
+      "dateModified": post.data.pubDate.toISOString(),
+      "inLanguage": "de-DE",
+      "image": `${siteUrl}/images/christina-portrait.jpg`,
       "author": {
         "@type": "Person",
         "name": post.data.author,
         "jobTitle": "Rechtsanwältin",
+        "url": `${siteUrl}/team/`,
         "worksFor": {
           "@type": "LegalService",
-          "name": "Rechtsanwaltskanzlei Rogalla"
+          "name": "Rechtsanwaltskanzlei Rogalla",
+          "url": siteUrl
         }
       },
       "publisher": {
         "@type": "LegalService",
         "name": "Rechtsanwaltskanzlei Rogalla",
-        "url": siteUrl
+        "url": siteUrl,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${siteUrl}/images/logo.png`
+        }
       },
-      "datePublished": post.data.pubDate.toISOString(),
-      "url": articleUrl,
-      "keywords": post.data.tags.join(', ')
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": articleUrl
+      },
+      "keywords": post.data.tags.join(', '),
+      "articleSection": post.data.category,
+      "about": {
+        "@type": "LegalService",
+        "name": "Rechtsanwaltskanzlei Rogalla"
+      }
     })}
   />
 

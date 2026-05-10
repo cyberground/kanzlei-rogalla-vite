@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kanzlei-rogalla.de/sitemap.xml
+
+# Admin-Bereich sperren
+Disallow: /admin/
+
+# Crawl-Delay (optional, für höfliches Crawling)
+Crawl-delay: 1

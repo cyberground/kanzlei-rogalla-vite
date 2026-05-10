@@ -1,0 +1,22 @@
+{
+  "name": "Rechtsanwaltskanzlei Rogalla",
+  "short_name": "Kanzlei Rogalla",
+  "description": "Rechtsanwältin für Insolvenzrecht & Erbrecht in Alsfeld, Gießen und Offenbach am Main.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#012030",
+  "theme_color": "#023A51",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

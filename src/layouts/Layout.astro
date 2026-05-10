@@ -2,9 +2,111 @@
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  canonical?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
 }
 
-const { title, description = 'Rechtsanwaltskanzlei Christina Rogalla – Spezialistin für Insolvenzrecht und Erbrecht in Alsfeld, Gießen und Offenbach.' } = Astro.props;
+const {
+  title,
+  description = 'Rechtsanwaltskanzlei Christina Rogalla – Spezialistin für Insolvenzrecht und Erbrecht in Alsfeld, Gießen und Offenbach.',
+  ogImage = '/images/christina-portrait.jpg',
+  canonical,
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://kanzlei-rogalla.de';
+const canonicalUrl = canonical ?? `${siteUrl}${Astro.url.pathname}`;
+const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": `${siteUrl}/#organization`,
+      "name": "Rechtsanwaltskanzlei Christina Rogalla",
+      "alternateName": "Kanzlei Rogalla",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/images/logo.png`,
+        "width": 300,
+        "height": 80
+      },
+      "image": `${siteUrl}/images/christina-portrait.jpg`,
+      "description": "Rechtsanwaltskanzlei für Insolvenzrecht, Erbrecht und Forderungsmanagement in Alsfeld, Gießen und Offenbach am Main. Kostenlose Erstberatung.",
+      "telephone": "+4966317580179",
+      "priceRange": "€€",
+      "knowsAbout": ["Insolvenzrecht", "Privatinsolvenz", "Restschuldbefreiung", "Erbrecht", "Testament", "Pflichtteil", "Forderungsmanagement", "Vorsorgevollmacht", "Patientenverfügung"],
+      "areaServed": [
+        { "@type": "City", "name": "Alsfeld" },
+        { "@type": "City", "name": "Gießen" },
+        { "@type": "City", "name": "Offenbach am Main" },
+        { "@type": "State", "name": "Hessen" }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Christina Rogalla",
+        "jobTitle": "Rechtsanwältin",
+        "image": `${siteUrl}/images/christina-portrait.jpg`
+      },
+      "location": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Kanzlei Rogalla – Alsfeld",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Markt 9",
+            "addressLocality": "Alsfeld",
+            "postalCode": "36304",
+            "addressRegion": "Hessen",
+            "addressCountry": "DE"
+          },
+          "telephone": "+4966317580179",
+          "url": siteUrl
+        },
+        {
+          "@type": "LocalBusiness",
+          "name": "Kanzlei Rogalla – Gießen",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Ursulum 14",
+            "addressLocality": "Gießen",
+            "postalCode": "35396",
+            "addressRegion": "Hessen",
+            "addressCountry": "DE"
+          },
+          "telephone": "+4966317580179"
+        },
+        {
+          "@type": "LocalBusiness",
+          "name": "Kanzlei Rogalla – Offenbach am Main",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Berliner Str. 256",
+            "addressLocality": "Offenbach am Main",
+            "postalCode": "63066",
+            "addressRegion": "Hessen",
+            "addressCountry": "DE"
+          },
+          "telephone": "+4966317580179"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Kanzlei Rogalla",
+      "description": "Rechtsanwältin für Insolvenzrecht & Erbrecht in Alsfeld, Gießen und Offenbach",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": `${siteUrl}/#organization` }
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -12,15 +114,61 @@ const { title, description = 'Rechtsanwaltskanzlei Christina Rogalla – Spezial
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Titel & Beschreibung -->
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+  <meta name="author" content="Rechtsanwältin Christina Rogalla" />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Geo / Lokale Relevanz -->
+  <meta name="geo.region" content="DE-HE" />
+  <meta name="geo.placename" content="Alsfeld, Gießen, Offenbach am Main" />
+  <meta name="geo.position" content="50.7511;9.2694" />
+  <meta name="ICBM" content="50.7511, 9.2694" />
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImageAbsolute} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rechtsanwältin Christina Rogalla – Kanzlei Rogalla" />
+  <meta property="og:site_name" content="Kanzlei Rogalla" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageAbsolute} />
+  <meta name="twitter:image:alt" content="Rechtsanwältin Christina Rogalla – Kanzlei Rogalla" />
+
+  <!-- PWA / Mobile -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#023A51" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Kanzlei Rogalla" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <!-- JSON-LD: Organisation + WebSite (global) -->
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+  <!-- Seitenspezifisches JSON-LD (z.B. Article aus Blog) -->
+  <slot name="head" />
 </head>
 <body>
   <slot name="header" />
