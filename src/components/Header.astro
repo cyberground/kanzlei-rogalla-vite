@@ -221,8 +221,7 @@ const services = [
   pointer-events: none;
 }
 
-.mega-menu.is-open,
-.has-mega:hover .mega-menu {
+.mega-menu.is-open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -308,31 +307,49 @@ const services = [
 </style>
 
 <script>
-// Mega Menu — Hover via CSS, JS nur für Position + Escape + Mobile
-const megaBtn = document.getElementById('mega-btn');
-const megaMenu = document.getElementById('mega-menu');
+const megaBtn    = document.getElementById('mega-btn');
+const megaMenu   = document.getElementById('mega-menu');
+const megaTrigger = document.getElementById('mega-trigger');
 const headerMain = document.querySelector('.header-main');
 
+// --- Position ---
 function updateMegaPosition() {
   if (headerMain && megaMenu) {
-    const rect = headerMain.getBoundingClientRect();
-    megaMenu.style.top = rect.bottom + 'px';
+    megaMenu.style.top = headerMain.getBoundingClientRect().bottom + 'px';
   }
 }
-
 updateMegaPosition();
 window.addEventListener('scroll', updateMegaPosition, { passive: true });
 window.addEventListener('resize', updateMegaPosition, { passive: true });
 
-// Escape schließt
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
+// --- Hover mit Delay (verhindert, dass das Menü bei der Lücke verschwindet) ---
+let hideTimer: ReturnType<typeof setTimeout> | null = null;
+
+function openMega() {
+  if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+  megaMenu?.classList.add('is-open');
+  megaBtn?.setAttribute('aria-expanded', 'true');
+}
+
+function closeMega() {
+  hideTimer = setTimeout(() => {
     megaMenu?.classList.remove('is-open');
     megaBtn?.setAttribute('aria-expanded', 'false');
-  }
+    hideTimer = null;
+  }, 200);
+}
+
+megaTrigger?.addEventListener('mouseenter', openMega);
+megaTrigger?.addEventListener('mouseleave', closeMega);
+megaMenu?.addEventListener('mouseenter', openMega);
+megaMenu?.addEventListener('mouseleave', closeMega);
+
+// --- Escape ---
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMega();
 });
 
-// Mobile Nav Toggle
+// --- Mobile Nav Toggle ---
 const navToggle = document.getElementById('nav-toggle');
 const mobileNav = document.getElementById('mobile-nav');
 navToggle?.addEventListener('click', () => {

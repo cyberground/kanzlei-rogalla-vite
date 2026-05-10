@@ -210,10 +210,10 @@ import Footer from '../components/Footer.astro';
           <a href="/kontakt" class="btn btn-outline">Standorte & Öffnungszeiten</a>
         </div>
         <div class="split-layout__img animate-fade-in-right">
-          <img src="/images/kanzlei-gebaeude.png"
-               alt="Kanzlei Rogalla Alsfeld"
+          <img src="/images/teamarbeit-rogalla.jpg"
+               alt="Kanzlei Rogalla – Rechtsanwältin Christina Rogalla im Beratungsgespräch"
                class="split-img split-img--landscape"
-               style="object-position: top;"
+               style="object-position: center top;"
                loading="lazy" />
         </div>
       </div>
@@ -292,6 +292,16 @@ import Footer from '../components/Footer.astro';
 }
 
 .hero__ctas { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; margin-bottom: var(--space-10); }
+.hero__ctas .btn-secondary {
+  background-color: var(--gold-light);
+  border-color: var(--gold-light);
+  color: var(--navy);
+}
+.hero__ctas .btn-secondary:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
 
 .hero__trust {
   display: flex;

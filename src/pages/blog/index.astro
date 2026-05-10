@@ -189,11 +189,11 @@ function excerpt(body: string, maxLen = 160): string {
       let visible = 0;
       cards.forEach((card) => {
         const match = cat === 'Alle' || card.dataset.category === cat;
-        card.hidden = !match;
+        card.classList.toggle('is-hidden', !match);
         if (match) visible++;
       });
 
-      if (noRes) noRes.hidden = visible > 0;
+      if (noRes) noRes.classList.toggle('is-hidden', visible > 0);
     });
   });
 </script>
@@ -440,6 +440,9 @@ function excerpt(body: string, maxLen = 160): string {
 .blog-card__cta:hover {
   color: var(--gold);
 }
+
+.blog-card.is-hidden,
+.blog-no-results.is-hidden { display: none; }
 
 .blog-no-results {
   text-align: center;
