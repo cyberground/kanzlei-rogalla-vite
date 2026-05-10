@@ -8,9 +8,9 @@ const year = new Date().getFullYear();
 
       <div class="footer-col footer-col--brand">
         <a href="/" class="footer-logo" aria-label="Kanzlei Rogalla – Startseite">
-          <img src="/images/logo.png" alt="Kanzlei Rogalla" class="footer-logo__img" loading="lazy" />
           <span class="footer-logo__name">Kanzlei Rogalla</span>
           <span class="footer-logo__tagline">Rechtsanwältin · Insolvenz & Erbrecht</span>
+          <img src="/images/logo.png" alt="Rechtsanwaltskanzlei Christina Rogalla" class="footer-logo__img" loading="lazy" />
         </a>
         <p class="footer-desc">
           Kompetente und persönliche Rechtsberatung in Insolvenzrecht, Erbrecht und
@@ -58,15 +58,15 @@ const year = new Date().getFullYear();
         <div class="footer-locations">
           <div class="footer-location">
             <span class="footer-location__city">Alsfeld (Hauptkanzlei)</span>
-            <span class="footer-location__addr">Grünberger Straße 14<br />36304 Alsfeld</span>
+            <span class="footer-location__addr">Markt 9<br />36304 Alsfeld</span>
           </div>
           <div class="footer-location">
             <span class="footer-location__city">Gießen</span>
-            <span class="footer-location__addr">Beratung nach Vereinbarung</span>
+            <span class="footer-location__addr">Ursulum 14<br />35396 Gießen</span>
           </div>
           <div class="footer-location">
-            <span class="footer-location__city">Offenbach</span>
-            <span class="footer-location__addr">Beratung nach Vereinbarung</span>
+            <span class="footer-location__city">Offenbach am Main</span>
+            <span class="footer-location__addr">Berliner Str. 256<br />63066 Offenbach am Main</span>
           </div>
         </div>
       </div>
@@ -124,8 +124,11 @@ const year = new Date().getFullYear();
 .footer-logo__img {
   height: 55px;
   width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  align-self: flex-start;
   filter: brightness(0) invert(1);
-  margin-bottom: var(--space-2);
+  margin-top: var(--space-3);
 }
 
 .footer-logo__name {
