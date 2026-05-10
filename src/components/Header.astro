@@ -81,7 +81,7 @@ const services = [
                   {services.map(s => (
                     <a href={s.href} class="mega-card">
                       <div class="mega-card__img-wrap">
-                        <img src={s.img} alt={s.title} class="mega-card__img" loading="lazy" />
+                        <img src={s.img} alt={s.title} class={`mega-card__img${s.img.includes('kanzlei-gebaeude') ? ' mega-card__img--top' : ''}`} loading="lazy" />
                         <span class="mega-card__badge">{s.badge}</span>
                       </div>
                       <div class="mega-card__body">
@@ -217,11 +217,12 @@ const services = [
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
-  transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
   pointer-events: none;
 }
 
-.mega-menu.is-open {
+.mega-menu.is-open,
+.has-mega:hover .mega-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -271,7 +272,8 @@ const services = [
 .mega-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 
 .mega-card__img-wrap { position: relative; overflow: hidden; aspect-ratio: 16/9; }
-.mega-card__img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.mega-card__img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.4s ease; }
+.mega-card__img--top { object-position: top; }
 .mega-card:hover .mega-card__img { transform: scale(1.05); }
 
 .mega-card__badge {
@@ -306,35 +308,31 @@ const services = [
 </style>
 
 <script>
-// Mega Menu Toggle
+// Mega Menu — Hover via CSS, JS nur für Position + Escape + Mobile
 const megaBtn = document.getElementById('mega-btn');
 const megaMenu = document.getElementById('mega-menu');
 const headerMain = document.querySelector('.header-main');
 
-function openMega() {
-  const rect = headerMain.getBoundingClientRect();
-  megaMenu.style.top = (rect.bottom) + 'px';
-  megaMenu.classList.add('is-open');
-  megaBtn.setAttribute('aria-expanded', 'true');
+function updateMegaPosition() {
+  if (headerMain && megaMenu) {
+    const rect = headerMain.getBoundingClientRect();
+    megaMenu.style.top = rect.bottom + 'px';
+  }
 }
 
-function closeMega() {
-  megaMenu.classList.remove('is-open');
-  megaBtn.setAttribute('aria-expanded', 'false');
-}
+updateMegaPosition();
+window.addEventListener('scroll', updateMegaPosition, { passive: true });
+window.addEventListener('resize', updateMegaPosition, { passive: true });
 
-megaBtn?.addEventListener('click', (e) => {
-  e.stopPropagation();
-  megaMenu?.classList.contains('is-open') ? closeMega() : openMega();
+// Escape schließt
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    megaMenu?.classList.remove('is-open');
+    megaBtn?.setAttribute('aria-expanded', 'false');
+  }
 });
 
-document.addEventListener('click', closeMega);
-megaMenu?.addEventListener('click', (e) => e.stopPropagation());
-
-// Escape key
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMega(); });
-
-// Mobile nav
+// Mobile Nav Toggle
 const navToggle = document.getElementById('nav-toggle');
 const mobileNav = document.getElementById('mobile-nav');
 navToggle?.addEventListener('click', () => {

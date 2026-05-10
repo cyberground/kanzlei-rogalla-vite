@@ -488,6 +488,63 @@ a.contact-card:hover .contact-card__arrow {
 /* ============================================================
    FORM
    ============================================================ */
+
+/* Modern input/textarea/select styles */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-base);
+  font-family: 'Lato', sans-serif;
+  color: var(--text);
+  background: var(--bg-alt);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgb(184 150 62 / 0.15);
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form input[type="tel"]::placeholder,
+.contact-form textarea::placeholder {
+  color: rgb(0 0 0 / 0.35);
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: var(--line-height-relaxed);
+}
+
+.contact-form .form-submit {
+  background: var(--gold);
+  color: var(--navy-dark);
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-form .form-submit:hover {
+  background: var(--gold-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
 .form-header {
   margin-bottom: var(--space-8);
 }

@@ -8,6 +8,7 @@ const year = new Date().getFullYear();
 
       <div class="footer-col footer-col--brand">
         <a href="/" class="footer-logo" aria-label="Kanzlei Rogalla – Startseite">
+          <img src="/images/logo.png" alt="Kanzlei Rogalla" class="footer-logo__img" loading="lazy" />
           <span class="footer-logo__name">Kanzlei Rogalla</span>
           <span class="footer-logo__tagline">Rechtsanwältin · Insolvenz & Erbrecht</span>
         </a>
@@ -48,6 +49,7 @@ const year = new Date().getFullYear();
           <li><a href="/team" class="footer-link">Über Christina Rogalla</a></li>
           <li><a href="/blog" class="footer-link">Ratgeber & Rechtsnews</a></li>
           <li><a href="/kontakt" class="footer-link">Kontakt & Erstberatung</a></li>
+          <li><a href="/downloads" class="footer-link">Downloads & Formulare</a></li>
         </ul>
       </div>
 
@@ -117,6 +119,13 @@ const year = new Date().getFullYear();
   gap: 4px;
   text-decoration: none;
   margin-bottom: var(--space-5);
+}
+
+.footer-logo__img {
+  height: 55px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: var(--space-2);
 }
 
 .footer-logo__name {
