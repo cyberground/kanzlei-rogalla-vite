@@ -31,10 +31,7 @@ const currentPath = Astro.url.pathname;
   <div class="header-main">
     <div class="container header-main__inner">
       <a href="/" class="site-logo" aria-label="Kanzlei Rogalla – Zur Startseite">
-        <span class="site-logo__text">
-          <span class="site-logo__name">Kanzlei Rogalla</span>
-          <span class="site-logo__tagline">Rechtsanwältin · Insolvenz & Erbrecht</span>
-        </span>
+        <img src="/images/logo.png" alt="Kanzlei Rogalla" class="site-logo__img" width="200" height="60" loading="eager" />
       </a>
 
       <nav class="main-nav" aria-label="Hauptnavigation">
@@ -149,27 +146,11 @@ const currentPath = Astro.url.pathname;
   flex-shrink: 0;
 }
 
-.site-logo__text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.site-logo__name {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: var(--letter-spacing-tight);
-  line-height: 1;
-}
-
-.site-logo__tagline {
-  font-size: 0.65rem;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
-  color: var(--gold);
+.site-logo__img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .main-nav { display: none; }
